@@ -1,0 +1,30 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:av="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="av" x:Class="booooks.MainWindow"
+        Title="Скам книжный" Height="350" Width="500">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="129*"/>
+            <RowDefinition Height="205*"/>
+        </Grid.RowDefinitions>
+        <ListBox x:Name="booksListBox" HorizontalAlignment="Center" VerticalAlignment="Center" Width="476" Height="109" av:ItemsSource="{av:SampleData ItemCount=5}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding}" />
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <StackPanel VerticalAlignment="Center" Margin="12,0,10,0" Height="185" Grid.Row="1">
+            <TextBlock Text="Название книги" Width="468" />
+            <TextBox x:Name="titleTextBox" Width="470" />
+            <TextBlock Text="Автор:"  Width="467" />
+            <TextBox x:Name="authorTextBox" Width="470" />
+            <TextBlock Text="Год:"  Width="467" />
+            <TextBox x:Name="yearTextBox" Width="470" />
+            <TextBlock Text="Жанр:"  Width="468" />
+            <TextBox x:Name="genreTextBox" Width="470" />
+            <Button Content="Добавить книгу" Width="210" Click="AddBook_Click" Height="33" />
+        </StackPanel>
+    </Grid>
+</Window>
